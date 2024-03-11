@@ -1,0 +1,6 @@
+class BackgroundObject {
+
+    constructor(){
+        
+    }
+}
