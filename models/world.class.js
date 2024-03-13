@@ -13,7 +13,7 @@ class World {
     ];
 
     backgroundObjects = [
-        
+        new BackgroundObject('../assets/img/5_background/layers/3_third_layer/1.png', 0),
     ];
 
     constructor(canvas){
@@ -28,6 +28,7 @@ class World {
         this.addToMap(this.character);
         this.addObjectsToMap(this.enemies);
         this.addObjectsToMap(this.clouds);
+        this.addObjectsToMap(this.backgroundObjects);
 
         let self = this;
         requestAnimationFrame(function(){
