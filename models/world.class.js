@@ -8,9 +8,11 @@ class World {
 ];
     canvas;
     ctx;
+    keyboard;
     clouds = [
         new Cloud(),
     ];
+
 
     backgroundObjects = [
         new BackgroundObject('../assets/img/5_background/layers/air.png', 0),
@@ -19,10 +21,16 @@ class World {
         new BackgroundObject('../assets/img/5_background/layers/1_first_layer/1.png', 0),
     ];
 
-    constructor(canvas){
+    constructor(canvas, keyboard){
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
+        this.keyboard = keyboard;
         this.draw();
+        this.setWorld();
+    }
+
+    setWorld(){
+        this.character.world = this;
     }
 
     draw(){
