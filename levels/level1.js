@@ -1,9 +1,9 @@
 const level1 = new Level(
 	[
+		new Endbloss(),
         new Chicken(), 
         new Chicken(), 
-        new Chicken(),
-		new Endbloss()
+        new Chicken()
     ],
 	[
         new Cloud()
@@ -45,4 +45,21 @@ const level1 = new Level(
 		new BackgroundObject('../assets/img/5_background/layers/2_second_layer/2.png', 719 * 5),
 		new BackgroundObject('../assets/img/5_background/layers/1_first_layer/2.png', 719 * 5),
 	],
+
+	[
+		new Coin(250),
+		new Coin(250),
+		new Coin(250),
+		new Coin(250),
+		new Coin(250),
+		new Coin(250),
+		new Coin(250),
+	],
+
+	[
+		new Bottle(250),
+		new Bottle(250),
+		new Bottle(250),
+		new Bottle(250),
+	]
 );
