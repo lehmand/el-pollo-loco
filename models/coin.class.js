@@ -10,8 +10,17 @@ class Coin extends CollectableObject {
     constructor(y){
         super();
         this.loadImg(this.IMAGES[0]);
+        this.loadImages(this.IMAGES);
 
-        this.x = Math.round(Math.random() * 3000);
+        this.x = Math.round(Math.random() * 2000);
         this.y = y;
+
+        this.animate();
+    }
+
+    animate(){
+        setInterval(() => {
+            this.playAnimation(this.IMAGES);
+        }, 300)
     }
 }
