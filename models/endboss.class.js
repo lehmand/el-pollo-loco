@@ -1,0 +1,3 @@
+class Endbloss extends MovableObject {
+
+}
