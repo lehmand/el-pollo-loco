@@ -18,7 +18,7 @@ class Endbloss extends MovableObject {
     constructor(){
         super().loadImg('../assets/img/4_enemie_boss_chicken/2_alert/G5.png');
         this.loadImages(this.IMAGES_WALKING);
-        this.x = 700;
+        this.x = 3000;
         this.animate();
     }
 
