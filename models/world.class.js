@@ -1,15 +1,15 @@
 class World {
 	character = new Character();
-	enemies;
+	enemies = level1.enemies;
 
 	canvas;
 	ctx;
 	keyboard;
 	camera_x = 0;
 
-	clouds;
+	clouds = level1.clouds;
 
-	backgroundObjects;
+	backgroundObjects = level1.backgroundObjects;
 
 	constructor(canvas, keyboard) {
 		this.ctx = canvas.getContext('2d');
