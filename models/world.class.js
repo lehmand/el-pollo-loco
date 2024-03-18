@@ -53,6 +53,13 @@ class World {
 			movableObject.x = movableObject.x * -1;
 		}
 		this.ctx.drawImage(movableObject.img, movableObject.x, movableObject.y, movableObject.width, movableObject.height);
+		
+		this.ctx.beginPath();
+		this.ctx.lineWidth = '2';
+		this.ctx.strokeStyle = 'lime';
+		this.ctx.rect(movableObject.x, movableObject.y, movableObject.x + movableObject.width, movableObject.y + movableObject.height);
+		this.ctx.stroke();
+
 
 		if (movableObject.otherDirection) {
 			movableObject.x = movableObject.x * -1;
