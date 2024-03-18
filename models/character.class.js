@@ -51,6 +51,12 @@ class Character extends MovableObject {
         this.walking_sound.play();
       }
 
+      //   console.log(this.speedY)
+
+      if (this.world.keyboard.UP && !this.isInAir()) {
+        this.speedY = 20;
+      }
+
       this.world.camera_x = -this.x + 100;
     }, 1000 / 60);
 
