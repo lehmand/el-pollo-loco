@@ -10,6 +10,8 @@ class MovableObject {
   otherDirection = false;
   speedY = 0;
   acceleration = 1.95;
+  energy = 100;
+  lastHit = 0;
 
   applyGravity() {
     setInterval(() => {
@@ -31,8 +33,8 @@ class MovableObject {
   drawFrame(ctx) {
     if (this instanceof Character || this instanceof Chicken) {
       ctx.beginPath();
-      ctx.lineWidth = "2";
-      ctx.strokeStyle = "lime";
+      ctx.lineWidth = '2';
+      ctx.strokeStyle = 'lime';
       ctx.rect(this.x, this.y, this.width, this.height);
       ctx.stroke();
     }
@@ -45,6 +47,25 @@ class MovableObject {
       this.y + this.offsetY + this.height >= obj.y &&
       this.y + this.offsetY <= obj.y + obj.height
     ); // Optional: hiermit könnten wir schauen, ob ein Objekt sich in die richtige Richtung bewegt. Nur dann kollidieren wir. Nützlich bei Gegenständen, auf denen man stehen kann.
+  }
+
+  hit() {
+    this.energy -= 5;
+    if (this.energy < 0) {
+      this.energy = 0;
+    } else {
+      this.lastHit = new Date().getTime();
+    }
+  }
+
+  isDead() {
+    return this.energy == 0;
+  }
+
+  isHurt() {
+    let timeDiff = new Date().getTime() - this.lastHit;
+    let timeDiffInSeconds = timeDiff / 1000;
+    return timeDiffInSeconds < 0.3;
   }
 
   loadImg(path) {
