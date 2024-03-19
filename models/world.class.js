@@ -7,6 +7,7 @@ class World {
   keyboard;
   camera_x = 0;
   healthbar = new HealthBar(50, 0);
+  coinbar = new Coinbar(50, 50);
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -43,7 +44,13 @@ class World {
     this.addObjectsToMap(this.level.bottles);
     this.addObjectsToMap(this.level.enemies);
 
+    this.ctx.translate(-this.camera_x, 0);
     this.addToMap(this.healthbar);
+    this.ctx.translate(this.camera_x, 0);
+
+    this.ctx.translate(-this.camera_x, 0);
+    this.addToMap(this.coinbar);
+    this.ctx.translate(this.camera_x, 0);
 
     this.addToMap(this.character);
 
