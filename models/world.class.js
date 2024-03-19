@@ -6,6 +6,7 @@ class World {
   ctx;
   keyboard;
   camera_x = 0;
+  healthbar = new HealthBar(50, 0);
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -25,6 +26,7 @@ class World {
       this.level.enemies.forEach((enemy) => {
         if (this.character.isColliding(enemy)) {
           this.character.hit();
+          this.healthbar.setPercentage(this.character.energy);
         }
       });
     }, 100);
@@ -39,8 +41,11 @@ class World {
     this.addObjectsToMap(this.level.clouds);
     this.addObjectsToMap(this.level.coins);
     this.addObjectsToMap(this.level.bottles);
-    this.addToMap(this.character);
     this.addObjectsToMap(this.level.enemies);
+
+    this.addToMap(this.healthbar);
+
+    this.addToMap(this.character);
 
     this.ctx.translate(-this.camera_x, 0);
 

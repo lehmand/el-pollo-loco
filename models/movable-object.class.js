@@ -1,7 +1,5 @@
 class MovableObject extends DrawableObject {
-  
-  imageCache = {};
-  currentImage = 0;
+
   speed = 0.3;
   otherDirection = false;
   speedY = 0;
@@ -21,7 +19,6 @@ class MovableObject extends DrawableObject {
   isInAir() {
     return this.y < 52;
   }
-
 
   isColliding(obj) {
     return (
@@ -69,6 +66,6 @@ class MovableObject extends DrawableObject {
   }
 
   jump() {
-    this.speedY = 25;
+    this.speedY = 28;
   }
 }
