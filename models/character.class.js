@@ -4,6 +4,7 @@ class Character extends MovableObject {
   speed = 6;
   y = 52;
   offsetY = -10;
+  offsetX = 15
   energy = 100;
 
   IMAGES_WALKING = [
