@@ -31,6 +31,17 @@ class World {
           this.healthbar.setPercentage(this.character.energy);
         }
       });
+
+      this.level.coins.forEach((coin, index) => {
+        if (this.character.isColliding(coin)) {
+          this.character.collectedCoins.push(coin);
+          this.coinbar.setPercentage(this.character.collectedCoins.length * 10);
+          if(this.character.collectedCoins.length > 10){
+            this.coinbar.setPercentage(100);
+          }
+          this.level.coins.splice(index, 1);
+        }
+      });
     }, 250);
   }
 

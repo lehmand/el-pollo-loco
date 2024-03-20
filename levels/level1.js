@@ -1,9 +1,9 @@
 const level1 = new Level(
 	[
 		new Endbloss(),
-        new Chicken(), 
-        new Chicken(), 
-        new Chicken()
+        // new Chicken(), 
+        // new Chicken(), 
+        // new Chicken()
     ],
 	[
         new Cloud()
@@ -47,6 +47,11 @@ const level1 = new Level(
 	],
 
 	[
+		new Coin(250),
+		new Coin(250),
+		new Coin(250),
+		new Coin(250),
+		new Coin(250),
 		new Coin(250),
 		new Coin(250),
 		new Coin(250),
