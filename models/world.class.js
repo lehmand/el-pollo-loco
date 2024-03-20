@@ -11,7 +11,7 @@ class World {
   salsabar = new Salsabar(50, 100);
 
   constructor(canvas, keyboard) {
-    this.ctx = canvas.getContext("2d");
+    this.ctx = canvas.getContext('2d');
     this.canvas = canvas;
     this.keyboard = keyboard;
     this.draw();
@@ -31,7 +31,7 @@ class World {
           this.healthbar.setPercentage(this.character.energy);
         }
       });
-    }, 100);
+    }, 250);
   }
 
   draw() {
