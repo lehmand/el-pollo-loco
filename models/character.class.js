@@ -2,8 +2,8 @@ class Character extends MovableObject {
   height = 1200 / 3;
   width = 610 / 3;
   speed = 6;
-  y = 300 - this.height;
-  offsetY = 100;
+  y = 52;
+  offsetY = -10;
   energy = 100;
 
   IMAGES_WALKING = [
@@ -79,13 +79,15 @@ class Character extends MovableObject {
     }, 1000 / 60);
 
     setInterval(() => {
-
-      if(this.isDead()){
+      if (this.isDead()) {
         this.playAnimation(this.IMAGES_DEAD);
-      } else if(this.isHurt()) {
+      } else if (this.isHurt()) {
         this.playAnimation(this.IMAGES_HURT);
       } else if (this.isInAir()) {
         this.playAnimation(this.IMAGES_JUMPING);
+        if (this.y > 52) {
+          this.y = 52;
+        }
       } else {
         if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
           this.playAnimation(this.IMAGES_WALKING);

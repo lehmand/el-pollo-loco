@@ -1,9 +1,8 @@
 class MovableObject extends DrawableObject {
-
   speed = 0.3;
   otherDirection = false;
   speedY = 0;
-  acceleration = 1.95;
+  acceleration = 2;
   energy = 100;
   lastHit = 0;
 
@@ -13,7 +12,7 @@ class MovableObject extends DrawableObject {
         this.y -= this.speedY;
         this.speedY -= this.acceleration;
       }
-    }, 1000 / 25);
+    }, 1000 / 24);
   }
 
   isInAir() {
