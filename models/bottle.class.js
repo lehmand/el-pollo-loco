@@ -10,13 +10,13 @@ class Bottle extends CollectableObject {
     constructor(y){
         super();
 
-        let bottleToShow = Math.round(Math.random() * 2)
+        let bottleToShow = Math.round(Math.random())
 
         this.loadImg(this.IMAGES[bottleToShow]);
 
 
         this.x = Math.round(Math.random() * 3000);
         this.y = y;
-        
+
     }
 }
