@@ -7,6 +7,7 @@ class Character extends MovableObject {
   offsetX = 15;
   energy = 100;
   collectedCoins = [];
+  collectedBottles = [];
 
   IMAGES_WALKING = [
     '../assets/img/2_character_pepe/2_walk/W-21.png',

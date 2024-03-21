@@ -12,7 +12,7 @@ class Salsabar extends Statusbar {
     constructor(x, y){
         super();
         this.loadImages(this.IMAGES);
-        this.setPercentage(100);
+        this.setPercentage(0);
         this.x = x;
         this.y = y;
     }

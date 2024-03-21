@@ -35,11 +35,22 @@ class World {
       this.level.coins.forEach((coin, index) => {
         if (this.character.isColliding(coin)) {
           this.character.collectedCoins.push(coin);
-          this.coinbar.setPercentage(this.character.collectedCoins.length * 10);
-          if(this.character.collectedCoins.length > 10){
+          this.coinbar.setPercentage(this.character.collectedCoins.length * 20);
+          if (this.character.collectedCoins.length > 5) {
             this.coinbar.setPercentage(100);
           }
           this.level.coins.splice(index, 1);
+        }
+      });
+
+      this.level.bottles.forEach((bottle, index) => {
+        if (this.character.isColliding(bottle)) {
+          this.character.collectedBottles.push(bottle);
+          this.salsabar.setPercentage(this.character.collectedBottles.length * 10);
+          if (this.character.collectedBottles.length > 10) {
+            this.salsabar.setPercentage(100);
+          }
+          this.level.bottles.splice(index, 1);
         }
       });
     }, 250);
