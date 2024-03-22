@@ -9,6 +9,7 @@ class World {
   healthbar = new HealthBar(50, 0);
   coinbar = new Coinbar(50, 50);
   salsabar = new Salsabar(50, 100);
+  endbossbar = new Endbossbar(500, 10);
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext('2d');
@@ -46,7 +47,9 @@ class World {
       this.level.bottles.forEach((bottle, index) => {
         if (this.character.isColliding(bottle)) {
           this.character.collectedBottles.push(bottle);
-          this.salsabar.setPercentage(this.character.collectedBottles.length * 10);
+          this.salsabar.setPercentage(
+            this.character.collectedBottles.length * 10
+          );
           if (this.character.collectedBottles.length > 10) {
             this.salsabar.setPercentage(100);
           }
@@ -78,6 +81,13 @@ class World {
     this.ctx.translate(-this.camera_x, 0);
     this.addToMap(this.salsabar);
     this.ctx.translate(this.camera_x, 0);
+
+    if (this.character.x > 2400) {
+      this.ctx.translate(-this.camera_x, 0);
+
+      this.addToMap(this.endbossbar);
+      this.ctx.translate(this.camera_x, 0);
+    }
 
     this.addToMap(this.character);
 
